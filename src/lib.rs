@@ -36,7 +36,7 @@ mod master;
 ///Describes Clipboard handler
 pub trait ClipboardHandler {
     ///Callback to call on clipboard change.
-    fn on_clipboard_change(&mut self) -> CallbackResult;
+    fn on_clipboard_change(&mut self, content: String) -> CallbackResult;
     ///Callback to call on when error happens in master.
     fn on_clipboard_error(&mut self, error: io::Error) -> CallbackResult {
         CallbackResult::StopWithError(error)
@@ -76,7 +76,7 @@ impl<H: ClipboardHandler> Master<H> {
     ///Creates new instance.
     pub fn new(handler: H) -> Self {
         Master {
-            handler
+            handler,
         }
     }
 }

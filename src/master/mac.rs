@@ -37,7 +37,7 @@ impl<H: ClipboardHandler> Master<H> {
 
             prev_count = count;
 
-            match self.handler.on_clipboard_change() {
+            match self.handler.on_clipboard_change(String::new()) {
                 CallbackResult::Next => (),
                 CallbackResult::Stop => break,
                 CallbackResult::StopWithError(error) => {

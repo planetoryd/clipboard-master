@@ -53,7 +53,7 @@ impl<H: ClipboardHandler> Master<H> {
         for msg in Messages::new().window(Some(window.inner())).low(Some(797)).high(Some(797)) {
             match msg {
                 Ok(_) => {
-                    match self.handler.on_clipboard_change() {
+                    match self.handler.on_clipboard_change(String::new()) {
                         CallbackResult::Next => (),
                         CallbackResult::Stop => break,
                         CallbackResult::StopWithError(error) => {

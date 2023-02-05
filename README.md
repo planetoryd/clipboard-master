@@ -1,3 +1,5 @@
+modified for offdict
+
 # clipboard-master
 
 ![](https://github.com/DoumanAsh/clipboard-master/workflows/Rust/badge.svg)
