@@ -13,7 +13,7 @@ impl<H: ClipboardHandler> Master<H> {
                     clipboard.getter.atoms.primary,
                     clipboard.getter.atoms.clipboard,
                 ],
-                clipboard.getter.atoms.string, 
+                clipboard.getter.atoms.utf8_string, 
                 clipboard.getter.atoms.property,
             ) {
                 let curr = String::from_utf8_lossy(&curr);
